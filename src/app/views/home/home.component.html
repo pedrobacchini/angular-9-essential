@@ -3,4 +3,9 @@
     <mat-card-subtitle class="sub-title">
         System to exercise the construction of a register products using Angular 9
     </mat-card-subtitle>
+    <ul>
+        <li *myFor="let n in [1,2,3] endText ' Structural directives' ">
+            {{n}}
+        </li>
+    </ul>
 </mat-card>

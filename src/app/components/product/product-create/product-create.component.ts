@@ -23,12 +23,10 @@ export class ProductCreateComponent implements OnInit {
     }
 
     save() {
-        this.productService.save(this.product)
-            .subscribe(() => {
-                    this.productService.showMessage("Produto Criado");
-                    this.router.navigate(['/products'])
-                },
-                exception => this.productService.showMessage(exception.message))
+        this.productService.save(this.product).subscribe(() => {
+            this.productService.showMessage("Produto Criado");
+            this.router.navigate(['/products'])
+        }, exception => this.productService.showMessage(exception.message))
     }
 
     cancel() {

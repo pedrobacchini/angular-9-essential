@@ -18,15 +18,19 @@ export class ProductService {
                 private httpClient: HttpClient) {
     }
 
-    save(product: Product): Observable<Product> {
-        return this.httpClient.post<Product>(this.productsUrl, product);
-    }
-
     showMessage(msg: string): void {
         this.snackBar.open(msg, 'X', {
             duration: 1000,
             horizontalPosition: "right",
             verticalPosition: "top"
         });
+    }
+
+    save(product: Product): Observable<Product> {
+        return this.httpClient.post<Product>(this.productsUrl, product);
+    }
+
+    getAll(): Observable<Product[]> {
+        return this.httpClient.get<Product[]>(this.productsUrl)
     }
 }
